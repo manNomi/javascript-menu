@@ -20,9 +20,9 @@
 [X] - 월요일 카테고리 무작위 추첨 Category.getRanomCategory
 -> [X] - 카테고리 클래스에는 resultCategory가 있음
 -> [X] - **1이면 일식, 2면 한식, 3이면 중식, 4면 아시안, 5면 양식**을 추천 / 두번이상 나오면 다시 랜덤을 한다
-[] - coach.getBadFood(category) coach.getResultFood(category)를 통해 메뉴를 가져온다
-[] - category를 가져오고 menu.getMenu(badFood,resultFood,category)통해 메뉴를 가져온다
-[] - coach.addResultFood(menu) 통해서 resultFood의 메뉴 추가
+[X] - coach.getBadFood(category) coach.getResultFood(category)를 통해 메뉴를 가져온다
+[X] - category를 가져오고 menu.getMenu(badFood,resultFood,category)통해 메뉴를 가져온다
+[X] - coach.addResultFood(menu) 통해서 resultFood의 메뉴 추가
 
 [] - 메뉴 추천 결과 print (OutputView)
 [] - 메뉴 추천 결과 요일 출력 (OutputView)

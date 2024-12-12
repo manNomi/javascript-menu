@@ -37,6 +37,13 @@ class Controller {
     }
     this.dates.forEach((day) => {
       const selectCategory = this.category.getRandomCategory();
+      coachList.forEach((coach) => {
+        const selectMenu = this.menu.getMenuNotBad(
+          coach.getBadFood(),
+          selectCategory,
+        );
+        coach.addFood(selectMenu);
+      });
     });
   }
 }

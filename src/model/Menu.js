@@ -1,5 +1,5 @@
+import { Random } from '@woowacourse/mission-utils';
 import { parseCommaSeparatedString } from '../utility/parser/parsing.js';
-import OutputView from '../View/OutputView.js';
 
 export default class Menu {
   // menuList => [{category:이름,menus:[메뉴들]}]
@@ -24,5 +24,32 @@ export default class Menu {
       if (menus.menuList.includes(menu)) isIn = true;
     });
     return isIn;
+  }
+
+  getMenus(category) {
+    let resultMenus;
+    this.menuAllList.forEach((menuList) => {
+      if (menuList.category === category) {
+        resultMenus = menuList.menus;
+      }
+    });
+    return resultMenus;
+  }
+
+  getMenuNotBad(badMenus, category) {
+    let notSelect = true;
+    let select;
+    while (notSelect) {
+      select = this.getRandomMenu(category);
+      if (!badMenus.includes(select)) {
+        notSelect = false;
+      }
+    }
+    return select;
+  }
+
+  getRandomMenu(category) {
+    const menus = this.getMenus(category);
+    return Random.shuffle(menus);
   }
 }
