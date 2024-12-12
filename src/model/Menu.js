@@ -49,11 +49,16 @@ export default class Menu {
   }
 
   getRandomMenu(category) {
+    console.log(category);
     const menus = this.getMenus(category);
     return this.shuffle(menus)[0];
   }
 
   shuffle(array) {
-    return array.sort(() => Random.pickNumberInRange(1, 10) / 10 - 0.5);
+    console.log(array);
+    const shuffled = array.sort(
+      () => Random.pickNumberInRange(1, 10) / 10 - 0.5,
+    );
+    return shuffled;
   }
 }
