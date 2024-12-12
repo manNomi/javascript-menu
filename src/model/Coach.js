@@ -11,4 +11,8 @@ export default class Coach {
   addBadFood(badMenu) {
     this.badMenu = badMenu;
   }
+
+  getBadFood() {
+    return this.badMenu;
+  }
 }

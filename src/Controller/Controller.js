@@ -26,6 +26,7 @@ class Controller {
     coachList.forEach((coach) => {
       const badMenus = this.inputService.inputBadMenu(Menu.isInMenu);
       coach.addBadFood(badMenus);
+      this.outputView.print(coach.getBadFood());
     });
   }
 }

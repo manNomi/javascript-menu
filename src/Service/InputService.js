@@ -1,9 +1,6 @@
 import { parseCommaSeparatedString } from '../utility/parser/parsing.js';
 import { INPUT_MESSAGES } from '../config/inputMessage.js';
-import {
-  validateCoach,
-  validateBadFood,
-} from '../utility/validataor/validate.js';
+import { validateCoach } from '../utility/validataor/validate.js';
 import { ERROR_MESSAGES } from '../config/errorMessage.js';
 
 export default class InputService {
