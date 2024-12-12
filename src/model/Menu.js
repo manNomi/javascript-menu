@@ -36,12 +36,12 @@ export default class Menu {
     return resultMenus;
   }
 
-  getMenuNotBad(badMenus, category) {
+  getMenuNotBad(badMenus, resultMenu, category) {
     let notSelect = true;
     let select;
     while (notSelect) {
       select = this.getRandomMenu(category);
-      if (!badMenus.includes(select)) {
+      if (!badMenus.includes(select) && !resultMenu.includes(select)) {
         notSelect = false;
       }
     }

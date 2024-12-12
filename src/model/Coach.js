@@ -9,6 +9,10 @@ export default class Coach {
     return this.name;
   }
 
+  getResultFood() {
+    return this.selectFood;
+  }
+
   addBadFood(badMenu) {
     this.badMenu = badMenu;
   }

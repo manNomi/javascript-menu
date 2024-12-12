@@ -40,6 +40,7 @@ class Controller {
       coachList.forEach((coach) => {
         const selectMenu = this.menu.getMenuNotBad(
           coach.getBadFood(),
+          coach.getResultFood(),
           selectCategory,
         );
         coach.addFood(selectMenu);
