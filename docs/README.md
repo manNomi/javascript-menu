@@ -8,12 +8,12 @@
 ->[X] - 식사를 같이 하는 인원 (Int : 2<=i<=5)
 [X] - 코치의 이름으로 Coach 클래스 생성 -> constructor 이름을 필드로 설정
 [X] - 코치 클래스를 coachList로 배열화
-[] - 각 배열을 forEach해서 inputBadMenu 실행
-[] - 못먹는 메뉴 입력받기 (InputViewService.js)
--> [] , 로 구분해서 입력 먹지 못하는 메뉴 없으면 빈값
--> [] 메뉴클래스의 isInMenu함수를 이용 있는 메뉴인지 확인
-[] - 입력 받은 값을 배열화
-[] - addBadFood(menu)로 badFoodList에 add
+[X] - 각 배열을 forEach해서 inputBadMenu 실행
+[X] - 못먹는 메뉴 입력받기 (InputViewService.js)
+-> [X] , 로 구분해서 입력 먹지 못하는 메뉴 없으면 빈값
+-> [X] 메뉴클래스의 isInMenu함수를 이용 있는 메뉴인지 확인
+[X] - 입력 받은 값을 배열화
+[X] - addBadFood(menu)로 badFoodList에 add
 
 [] - const date = [월화수목금] date.forEach 메소드
 [] - dateRecommand 함수 호출  

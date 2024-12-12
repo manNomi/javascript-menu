@@ -1,6 +1,10 @@
 import { parseCommaSeparatedString } from '../utility/parser/parsing.js';
 import { INPUT_MESSAGES } from '../config/inputMessage.js';
-import { validateCoach } from '../utility/validataor/validate.js';
+import {
+  validateCoach,
+  validateBadFood,
+} from '../utility/validataor/validate.js';
+import { ERROR_MESSAGES } from '../config/errorMessage.js';
 
 export default class InputService {
   constructor(inputView, outputView) {
@@ -9,7 +13,30 @@ export default class InputService {
   }
 
   async inputCoach() {
-    this.inputProcessComma(INPUT_MESSAGES.COACH_NAME, validateCoach);
+    return await this.inputProcessComma(
+      INPUT_MESSAGES.COACH_NAME,
+      validateCoach,
+    );
+  }
+
+  async inputBadMenu(isInMenu) {
+    while (true) {
+      try {
+        const badMenus = await this.inputProcessComma(
+          INPUT_MESSAGES.COACH_BAD_FOOD,
+          validateBadFood,
+        );
+        badMenus.forEach((menu) => {
+          if (menu !== '' && !isInMenu(menu)) {
+            throw new Error(ERROR_MESSAGES.INVALID_INPUT_MENU);
+          }
+        });
+        return badMenus;
+      } catch (error) {
+        this.outputView.print(error.message); // 에러 메시지 출력
+      }
+    }
+    return;
   }
 
   async inputProcessComma(inputMessage, validates) {
@@ -23,47 +50,5 @@ export default class InputService {
         this.outputView.print(error.message); // 에러 메시지 출력
       }
     }
-  }
-
-  async inputProcess(inputMessage, validate) {
-    while (true) {
-      try {
-        const inputText = await this.inputView.input(inputMessage);
-        validate(inputText); // 검증 로직
-        return inputText; // 검증 통과 시 반환
-      } catch (error) {
-        this.outputView.print(error.message); // 에러 메시지 출력
-      }
-    }
-  }
-
-  async inputProcessTF(inputMessage, validate) {
-    while (true) {
-      try {
-        const inputText = await this.inputView.input(inputMessage);
-        return validate(inputText); // 검증 통과 시 반환
-      } catch (error) {
-        this.outputView.print(error.message); // 에러 메시지 출력
-      }
-    }
-  }
-
-  async inputPattern(inputMessage, pattern, patternMessage) {
-    return await this.inputProcess(inputMessage, (inputText) => {
-      if (!pattern.test(inputText)) {
-        throw new Error(`${patternMessage}: ${pattern}`);
-      }
-    });
-  }
-
-  async inputBoolean(inputMessage) {
-    return await this.inputProcess(inputMessage, (inputText) => {
-      const lowerInput = inputText.toLowerCase();
-      if (lowerInput === 'yes' || lowerInput === 'y') return true;
-      if (lowerInput === 'no' || lowerInput === 'n') return false;
-      throw new Error(
-        '유효하지 않은 입력입니다. "yes" 또는 "no"를 입력하세요.',
-      );
-    });
   }
 }

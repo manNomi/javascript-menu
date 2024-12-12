@@ -3,6 +3,7 @@ import OutputView from '../View/OutputView.js';
 import InputService from '../Service/InputService.js';
 import OutputService from '../Service/OutPutService.js';
 import Menu from '../model/Menu.js';
+import Coach from '../model/Coach.js';
 
 class Controller {
   constructor(menu) {
@@ -23,7 +24,8 @@ class Controller {
       coachList.push(coachClass);
     });
     coachList.forEach((coach) => {
-      const badMenu = this.inputService.inputBadMenu();
+      const badMenus = this.inputService.inputBadMenu(Menu.isInMenu);
+      coach.addBadFood(badMenus);
     });
   }
 }
