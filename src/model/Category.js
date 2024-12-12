@@ -15,10 +15,14 @@ export default class Category {
     let notCollect = true;
     let selectCategoryNum = 0;
     while (notCollect) {
-      selectCategoryNum = Random.pickNumberInRange(1, 5);
+      selectCategoryNum = Random.pickNumberInRange(
+        0,
+        this.categoryList.length - 1,
+      );
       notCollect = this.checkTwoCategory(this.categoryList[selectCategoryNum]);
     }
     const selectCategory = this.categoryList[selectCategoryNum];
+    console.log(selectCategoryNum);
     this.resultCategory.push(selectCategory);
     return selectCategory;
   }
