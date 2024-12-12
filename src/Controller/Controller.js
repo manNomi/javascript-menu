@@ -7,13 +7,21 @@ class Controller {
   constructor(menu) {
     this.inputView = new InputView();
     this.outputView = new OutputView();
-    this.menu = new Menu(menu);
-    this.category = new Category(menu);
+    // this.menu = new Menu(menu);
+    // this.category = new Category(menu);
     this.inputService = new InputService(this.inputView, this.outputView);
     this.outputService = new OutputService(this.outputView);
   }
 
-  async run() {}
+  async run() {
+    this.outputService.printStart();
+    const coachs = await this.inputService.inputCoach();
+    const coachList = [];
+    coachs.forEach((coach) => {
+      const coachClass = new Coach(coach);
+      coachList.push(coachClass);
+    });
+  }
 }
 
 export default Controller;

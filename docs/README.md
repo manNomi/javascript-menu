@@ -2,11 +2,11 @@
 
 <!-- [] - 메뉴를 txt로 만들어서 파일 읽기 (Menu.js) ,(Category.js)클래스에 넣기 -->
 
-[] - 시작 메시지 출력 (OutputView.js)
-[] - 코치 입력 받기 (InputViewService.js)
--> [] - 코치의 이름 (String i는 글자수: 2<=i<=4)
-->[] - 식사를 같이 하는 인원 (Int : 2<=i<=5)
-[] - 코치의 이름으로 Coach 클래스 생성 -> constructor 이름을 필드로 설정
+[X] - 시작 메시지 출력 (OutputView.js)
+[X] - 코치 입력 받기 (InputViewService.js)
+-> [X] - 코치의 이름 (String i는 글자수: 2<=i<=4)
+->[X] - 식사를 같이 하는 인원 (Int : 2<=i<=5)
+[X] - 코치의 이름으로 Coach 클래스 생성 -> constructor 이름을 필드로 설정
 [] - 코치 클래스를 coachList로 배열화
 [] - 각 배열을 forEach해서 inputBadMenu 실행
 [] - 못먹는 메뉴 입력받기 (InputViewService.js)

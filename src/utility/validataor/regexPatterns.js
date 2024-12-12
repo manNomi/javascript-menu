@@ -1,4 +1,8 @@
 const regexPatterns = {
+  LENGTH_2_TO_4: {
+    regex: /^.{1,20}$/,
+    description: '[문자열] 2~4자 길이 제한',
+  },
   EMPTY_STRING: {
     regex: /^$/,
     description: '[문자열] 빈 문자열 여부 확인',
