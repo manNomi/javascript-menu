@@ -20,23 +20,17 @@ export default class InputService {
   }
 
   async inputBadMenu(isInMenu) {
-    while (true) {
-      try {
-        const badMenus = await this.inputProcessComma(
-          INPUT_MESSAGES.COACH_BAD_FOOD,
-          validateBadFood,
-        );
-        badMenus.forEach((menu) => {
+    const badMenus = await this.inputProcessComma(
+      INPUT_MESSAGES.COACH_BAD_FOOD,
+      (inputBadMenuList) => {
+        inputBadMenuList.forEach((menu) => {
           if (menu !== '' && !isInMenu(menu)) {
             throw new Error(ERROR_MESSAGES.INVALID_INPUT_MENU);
           }
         });
-        return badMenus;
-      } catch (error) {
-        this.outputView.print(error.message); // 에러 메시지 출력
-      }
-    }
-    return;
+      },
+    );
+    return badMenus;
   }
 
   async inputProcessComma(inputMessage, validates) {

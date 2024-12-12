@@ -12,7 +12,3 @@ export const validateCoach = (input) => {
   });
   inputValidateLength(input, 2, 5, ERROR_MESSAGES.COACH_COUNT);
 };
-
-export const validateBadFood = (input) => {
-  input.forEach(() => {});
-};
