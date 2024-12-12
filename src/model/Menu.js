@@ -50,6 +50,10 @@ export default class Menu {
 
   getRandomMenu(category) {
     const menus = this.getMenus(category);
-    return Random.shuffle(menus)[0];
+    return this.shuffle(menus)[0];
+  }
+
+  shuffle(array) {
+    return array.sort(() => Random.pickNumberInRange(1, 10) / 10 - 0.5);
   }
 }

@@ -16,7 +16,6 @@ export default class Category {
     let selectCategoryNum = 0;
     while (notCollect) {
       selectCategoryNum = Random.pickNumberInRange(1, 5);
-      console.log(selectCategoryNum);
       notCollect = this.checkTwoCategory(this.categoryList[selectCategoryNum]);
     }
     const selectCategory = this.categoryList[selectCategoryNum];
