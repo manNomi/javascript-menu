@@ -30,7 +30,7 @@ export default class Menu {
     let resultMenus;
     this.menuAllList.forEach((menuList) => {
       if (menuList.category === category) {
-        resultMenus = menuList.menus;
+        resultMenus = menuList.menuList;
       }
     });
     return resultMenus;
@@ -50,6 +50,6 @@ export default class Menu {
 
   getRandomMenu(category) {
     const menus = this.getMenus(category);
-    return Random.shuffle(menus);
+    return Random.shuffle(menus)[0];
   }
 }

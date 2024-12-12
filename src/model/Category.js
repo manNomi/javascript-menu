@@ -8,7 +8,7 @@ export default class Category {
   }
 
   getCategoryList() {
-    return this.menuAllList;
+    return this.resultCategory;
   }
 
   getRandomCategory() {
@@ -16,6 +16,7 @@ export default class Category {
     let selectCategoryNum = 0;
     while (notCollect) {
       selectCategoryNum = Random.pickNumberInRange(1, 5);
+      console.log(selectCategoryNum);
       notCollect = this.checkTwoCategory(this.categoryList[selectCategoryNum]);
     }
     const selectCategory = this.categoryList[selectCategoryNum];
@@ -23,12 +24,12 @@ export default class Category {
     return selectCategory;
   }
 
-  checkTwoCategory(randNum) {
+  checkTwoCategory(randCategory) {
     let count = 0;
-    this.resultCategory.forEach((categoryNum) => {
-      if (categoryNum === randNum) count += 1;
+    this.resultCategory.forEach((category) => {
+      if (category === randCategory) count += 1;
     });
-    if (count >= 2) return false;
-    return true;
+    if (count >= 2) return true;
+    return false;
   }
 }
