@@ -7,7 +7,7 @@
 -> [X] - 코치의 이름 (String i는 글자수: 2<=i<=4)
 ->[X] - 식사를 같이 하는 인원 (Int : 2<=i<=5)
 [X] - 코치의 이름으로 Coach 클래스 생성 -> constructor 이름을 필드로 설정
-[] - 코치 클래스를 coachList로 배열화
+[X] - 코치 클래스를 coachList로 배열화
 [] - 각 배열을 forEach해서 inputBadMenu 실행
 [] - 못먹는 메뉴 입력받기 (InputViewService.js)
 -> [] , 로 구분해서 입력 먹지 못하는 메뉴 없으면 빈값
