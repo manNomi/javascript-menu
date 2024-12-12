@@ -1,6 +1,7 @@
 ### 점심 메뉴 추천 - 한주
 
-[] - 메뉴를 txt로 만들어서 파일 읽기 (Menu.js) ,(Category.js)클래스에 넣기
+<!-- [] - 메뉴를 txt로 만들어서 파일 읽기 (Menu.js) ,(Category.js)클래스에 넣기 -->
+
 [] - 시작 메시지 출력 (OutputView.js)
 [] - 코치 입력 받기 (InputViewService.js)
 -> [] - 코치의 이름 (String i는 글자수: 2<=i<=4)
