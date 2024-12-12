@@ -22,7 +22,6 @@ export default class Category {
       notCollect = this.checkTwoCategory(this.categoryList[selectCategoryNum]);
     }
     const selectCategory = this.categoryList[selectCategoryNum];
-    console.log(selectCategoryNum);
     this.resultCategory.push(selectCategory);
     return selectCategory;
   }

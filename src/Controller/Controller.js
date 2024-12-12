@@ -55,7 +55,6 @@ class Controller {
   recommandMenu(coachList) {
     this.dates.forEach(() => {
       const selectCategory = this.category.getRandomCategory();
-      console.log(selectCategory);
       coachList.forEach((coach) => {
         const selectMenu = this.menu.getMenuNotBad(
           coach.getBadFood(),
