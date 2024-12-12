@@ -16,12 +16,13 @@ export default class InputService {
     );
   }
 
-  async inputBadMenu(isInMenu) {
+  async inputBadMenu(name, isInMenu, menuList) {
+    const inputMessage = name + INPUT_MESSAGES.COACH_BAD_FOOD;
     const badMenus = await this.inputProcessComma(
-      INPUT_MESSAGES.COACH_BAD_FOOD,
+      inputMessage,
       (inputBadMenuList) => {
         inputBadMenuList.forEach((menu) => {
-          if (menu !== '' && !isInMenu(menu)) {
+          if (menu !== '' && !isInMenu(menuList, menu)) {
             throw new Error(ERROR_MESSAGES.INVALID_INPUT_MENU);
           }
         });

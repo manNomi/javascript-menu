@@ -23,11 +23,16 @@ class Controller {
       const coachClass = new Coach(coach);
       coachList.push(coachClass);
     });
-    coachList.forEach((coach) => {
-      const badMenus = this.inputService.inputBadMenu(Menu.isInMenu);
+    for (let index = 0; index < coachList.length; index++) {
+      const coach = coachList[index];
+      const badMenus = await this.inputService.inputBadMenu(
+        coach.getName(),
+        this.menu.isInMenu,
+        this.menu.getMenuList(),
+      );
       coach.addBadFood(badMenus);
       this.outputView.print(coach.getBadFood());
-    });
+    }
   }
 }
 
