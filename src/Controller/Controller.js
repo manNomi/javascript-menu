@@ -10,9 +10,11 @@ class Controller {
     this.inputView = new InputView();
     this.outputView = new OutputView();
     this.menu = new Menu(menu);
+    this.category = new Category(menu);
     // this.category = new Category(menu);
     this.inputService = new InputService(this.inputView, this.outputView);
     this.outputService = new OutputService(this.outputView);
+    this.dates = ['월', '화', '수', '목', '금'];
   }
 
   async run() {
@@ -33,6 +35,9 @@ class Controller {
       coach.addBadFood(badMenus);
       this.outputView.print(coach.getBadFood());
     }
+    this.dates.forEach((day) => {
+      const selectCategory = this.category.getRandomCategory();
+    });
   }
 }
 
